@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"> -->
+
+    <title>Agenda</title>
+</head>
+
+<body>
+
+    <div class="container" class="column">
+
+        <form action="submit" method="POST" class="form">{% csrf_token %}
+
+            <input type="text" name="username" placeholder="usuário">
+            <input type="password" name="password" placeholder="senha">
+
+            <button type="submit">Entrar</button>
+
+        </form>
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+
+</body>
+
+</html>
