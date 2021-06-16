@@ -11,9 +11,9 @@
 
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
-    <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"> -->
+    <script src="https://kit.fontawesome.com/b687d41eed.js" crossorigin="anonymous"></script>
 
-    <title>Agenda</title>
+    <title>Página para entrar</title>
 </head>
 
 <body>
@@ -22,15 +22,19 @@
         
         <form action="submit" method="POST" class="form">{% csrf_token %}
 
+            <i class="fas fa-users fa-2x"></i>
+
             <input type="text" name="username" placeholder="usuário">
             <input type="password" name="password" placeholder="senha">
 
             <button type="submit">Entrar</button>
 
+            <a href="http://localhost:8000/registrar/" class="a-login"> Cadastrar-se</a>
         </form>
         {% for message in messages %}
             <p>{{ message }}</p>
         {% endfor %}
+        
     </div>
 
 </body>
